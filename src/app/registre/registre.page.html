@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="login" ></ion-back-button>
+    </ion-buttons>
+    <ion-title style="margin-left: 30%;">registre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item  text-center>
+    <img class="tubiao" src="assets/huli.jpeg" >
+    </ion-item>
+  <div>
+    <form class="newform" (ngSubmit)= "regis()">
+        <ion-list lines="none" class="ion-no-margin ion-no-padding">
+            <ion-row>
+                
+              <ion-icon color="lala" margin name="mail"></ion-icon><ion-input required type="text" placeholder="your email" [(ngModel)]="form.email" name="email"></ion-input>
+            </ion-row>
+            <ion-row>
+               
+              <ion-icon color="lala" margin ios="ios-key" md="md-key"></ion-icon><ion-input required type="text" placeholder="your password" [(ngModel)]="form.pwd" name="pwd"></ion-input>
+            </ion-row>
+           
+            
+          </ion-list>
+          <div style="margin-top: 20px;">
+            <ion-button color="lala"  expand="block" type="submit">
+              creer un compte
+            </ion-button>
+          </div>
+         
+
+    </form>
+  </div>
+
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header >
+  <ion-toolbar >
+    <ion-title  text-center>WeLov</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  padding >
+  <ion-item  text-center>
+  <img class="tubiao" src="assets/huli.jpeg" >
+  </ion-item>
+
+ 
+
+  <form  class="newform" (ngSubmit)= "log()">
+
+      <ion-list   lines="none" class="ion-no-margin ion-no-padding">
+        
+        <ion-row >
+            
+          <ion-icon color="lala" margin name="mail"></ion-icon><ion-input  required type="text" placeholder="your email" [(ngModel)]="form.email" name="email"></ion-input>
+        </ion-row>
+        <ion-row>
+           
+          <ion-icon color="lala" margin ios="ios-key" md="md-key"></ion-icon><ion-input required type="text" placeholder="your password" [(ngModel)]="form.pwd" name="pwd"></ion-input>
+        </ion-row>
+        
+      </ion-list>
+      <div style="margin-top: 20px;">
+        <ion-button color="lala"  expand="block" type="submit">
+          Login
+        </ion-button>
+      </div>
+
+  </form>
+  <div class="cc">
+  <p  [routerLink]="'/registre'"> creer un compte</p>
+  </div>
+  <p text-center>ou</p>
+  <div class="icon">
+      <a (click)="logWithFacebook()"><ion-icon name="logo-facebook" ></ion-icon></a>
+      <a  (click)="logWithGoogle()"><ion-icon name="logo-google"></ion-icon></a>
+  </div>
+</ion-content>
