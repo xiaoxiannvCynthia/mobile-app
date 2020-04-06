@@ -60,7 +60,7 @@ export class LoginPage  {
       // The signed-in user info.
       var user = result.user;
       
-      this.router.navigate(['/todoslist'])
+      this.router.navigate(['all-todo'])
       
     }).catch(function(error) {
       
