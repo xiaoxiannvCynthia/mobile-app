@@ -14,7 +14,7 @@
     </ion-label>
   </ion-item>
 
-  <ion-item color="light" *ngFor="let todolist of todolists.slice(0,1)">  
+  <ion-item color="light" >  
     <ion-label> 
       <h2>{{ todolist.owner }}</h2>
     </ion-label>
@@ -26,9 +26,9 @@
     </ion-label>
   </ion-item>
 
-   <form (ngSubmit)="addList()" #addListForm="ngForm">
+   <form (ngSubmit)="addWriter()" #addListForm="ngForm">
     <ion-row margin class="row1">
-    <ion-input placeholder="writername" required id="title" type="text" name="title" [(ngModel)]="title" #ctrlTitle="ngModel">
+    <ion-input placeholder="writername" required id="title" type="text" name="title" [(ngModel)]="writername" #ctrlTitle="ngModel">
     </ion-input>
   <ion-button  expand="block" type="submit" fill="clear" [disabled]="!addListForm.valid"> <ion-icon ios="ios-add" md="md-add"></ion-icon>
   </ion-button>

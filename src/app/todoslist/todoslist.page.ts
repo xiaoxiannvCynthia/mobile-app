@@ -16,8 +16,10 @@ export class TodoslistPage implements OnInit {
 
   private todos$: Observable<Array<Todo>>;
   title: string;
-  todolist : Todolist = {items:[],title:" ",owner:"",reader:[],writer:[]}
-  id : string
+  todolist : Todolist = {title: "", items: [], owner:"",writer:[],reader:[]} as Todolist;
+  id : string;
+  priority : boolean;
+  viewer : string;
 
   constructor(private listService: TodoslistService,private route: ActivatedRoute,private router :Router) {}
 
@@ -25,18 +27,33 @@ export class TodoslistPage implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id')
     this.listService.getById(this.id).subscribe(r=>{
       this.todolist = r
+      for(var i = 0 ; i < r.writer.length;i++){
+        if(this.viewer == r.writer[i]){
+          this.priority = false;
+          break;
+        }
+        else
+        this.priority = true;
+      }
     },err=>{console.log(err)})
+    //当前登陆的人
+    this.viewer= firebase.auth().currentUser.email; 
+    
   }  
 
-  delete(todo: Todo){
-   // this.listService.delete(todo);
-  }
+  
   addList(){
     let item = { title: this.title, isDone: false,owner: firebase.auth().currentUser.email} as Todo;
     this.todolist.items.push(item);
     
     this.listService.update(this.todolist,this.id);
     console.log("coucou")
+
     this.router.navigate(['todoslist',this.id]);
   }
+  delete(i : number){
+    // this.listService.delete(todo);
+    this.todolist.items.splice(i, 1);
+    this.listService.update(this.todolist,this.id);
+   }
 }

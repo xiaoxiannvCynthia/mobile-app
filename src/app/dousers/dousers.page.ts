@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Todolist } from '../model/todolist';
+
 import { TodoslistService } from '../services/todoslist.service';
-import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
+import { Router, ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-dousers',
@@ -12,27 +15,34 @@ import 'firebase/auth';
 })
 export class DousersPage implements OnInit {
 
-  todolists: Todolist[] = []
-  title: string;
+  id:string;
+  todolist: Todolist ={items:[],title:" ",owner:"",reader:[], writer:[]};
+  writername: string;
   readername: string;
 
 
-  constructor(private todoslistservice:TodoslistService, 
-    private router: Router) { }
+  constructor(
+    private todoslistservice:TodoslistService, 
+    private router: Router,
+    private route: ActivatedRoute,
+    ) { }
 
   ngOnInit() {
-    this.todoslistservice.get(firebase.auth().currentUser.email).subscribe(
-      t => { this.todolists=t }
-    )
+    this.id = this.route.snapshot.paramMap.get('id')
+    this.todoslistservice.getById(this.id).subscribe(r=>{
+      this.todolist = r
+    },err=>{console.log(err)})
+    
   }
-  addList(){
-    let list = { items: [],writer: [].concat(this.title),owner:firebase.auth().currentUser.email} as Todolist;
-    this.todoslistservice.add(list);
+  addWriter(){
+    this.todolist.writer.push(this.writername);
+    this.todolist.reader.push(this.writername);
+    this.todoslistservice.update(this.todolist,this.id);
     this.router.navigate(['dousers']);
   }
   addReader(){
-    let list = { items: [],reader: [].concat(this.readername),owner:firebase.auth().currentUser.email} as Todolist;
-    this.todoslistservice.add(list);
+    this.todolist.reader.push(this.readername);
+    this.todoslistservice.update(this.todolist,this.id);
     this.router.navigate(['dousers']);
   }
 

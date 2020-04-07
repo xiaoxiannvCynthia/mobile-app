@@ -5,7 +5,7 @@ import { DousersPage } from './dousers.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: DousersPage
   }
 ];
