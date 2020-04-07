@@ -20,7 +20,7 @@ export class AllTodoPage implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.todoslistservice.getAll().subscribe(
+    this.todoslistservice.getByReader(firebase.auth().currentUser.email).subscribe(
       t => { this.todolists=t }
     )
    
@@ -31,7 +31,8 @@ export class AllTodoPage implements OnInit {
     this.router.navigate(['/todoslist'])
   }
   addList(){
-    let list = { title: this.title, items: [],owner:firebase.auth().currentUser.email} as Todolist;
+    let id = firebase.auth().currentUser.email;
+    let list = { title: this.title, items: [],owner:id, writer : [].concat(id), reader : [].concat(id)} as Todolist;
     this.todoslistservice.add(list);
     this.router.navigate(['all-todo']);
   }

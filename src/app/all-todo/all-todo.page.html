@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-row>
       <ion-avatar style="margin-left: 10px;">
-        <img src="assets/touxiang.jpeg" [routerLink]="['/person-list']"  >
+        <img src="assets/touxiang.jpeg" [routerLink]="['/dousers']"  >
       </ion-avatar>
       <ion-title  text-center>LovUCircle </ion-title>
     </ion-row>
@@ -31,6 +31,7 @@
       <ion-label>
         <h2 >{{ todolist.owner }}</h2>
       </ion-label>
+      <ion-button fill="clear" [routerLink]="['/dousers',  todolist.id]" > <small>settings</small> </ion-button>
     </ion-item>
      <ion-item text-wrap> 
        {{todolist.title}}

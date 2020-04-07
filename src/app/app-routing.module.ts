@@ -46,6 +46,11 @@ const routes: Routes = [
     path: 'person-list',
     loadChildren: () => import('./person-list/person-list.module').then( m => m.PersonListPageModule)
   },
+  {
+    path: 'dousers',
+    loadChildren: () => import('./dousers/dousers.module').then( m => m.DousersPageModule),
+    canActivate : [GuardService]
+  },
   
 ];
 
