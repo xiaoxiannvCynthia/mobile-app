@@ -29,8 +29,8 @@
     - git clone ce projet
     - executer la commande : ionic serve
     
--déploiement sur mobile
-    -Téléchager mobile-app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
-    -Installer app-debug.apk
+- déploiement sur mobile
+    - Téléchager mobile-app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+    - Installer app-debug.apk
 
  
