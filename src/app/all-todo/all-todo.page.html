@@ -15,7 +15,7 @@
   <form (ngSubmit)="addList()" #addListForm="ngForm">
         <ion-row margin class="row1">
         <ion-button  expand="block"  fill="clear" > <ion-icon name="images"></ion-icon></ion-button>
-        <ion-input placeholder="share your hapiness...." required id="title" type="text" name="title" [(ngModel)]="title" #ctrlTitle="ngModel">
+        <ion-input placeholder="ajouter une liste" required id="title" type="text" name="title" [(ngModel)]="title" #ctrlTitle="ngModel">
         </ion-input>
       <ion-button  expand="block" type="submit" fill="clear" [disabled]="!addListForm.valid"> <ion-icon name="paper-plane"></ion-icon>
       </ion-button>
@@ -41,7 +41,7 @@
          <ion-button fill="clear" > <small>12likes</small> </ion-button>
        </ion-col>
        <ion-col>
-        <ion-button fill="clear" [routerLink]="['/todoslist',  todolist.id]" > <small>comments</small> </ion-button>
+        <ion-button fill="clear" [routerLink]="['/todoslist',  todolist.id]" > <small>ajouter une tache</small> </ion-button>
       </ion-col>
       <ion-col>
          <ion-button fill="clear" > <small>12likes</small> </ion-button>
