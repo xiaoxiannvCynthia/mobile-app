@@ -36,4 +36,8 @@ export class AllTodoPage implements OnInit {
     this.todoslistservice.add(list);
     this.router.navigate(['all-todo']);
   }
+  delete(list:Todolist){
+    this.todoslistservice.delete(list);
+
+   }
 }

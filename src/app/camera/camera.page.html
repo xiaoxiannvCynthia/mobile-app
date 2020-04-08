@@ -1,17 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>camera</ion-title>
+    <ion-title text-center>camera</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-button (click)="addPhoto('library')" color="tertiary" expand="block">
     <ion-icon name="image" slot="start"></ion-icon>
-    Ouvrir la bibliothèque
-  </ion-button>
-  <ion-button (click)="addPhoto('photo')" color="tertiary" expand="block">
-    <ion-icon name="camera" slot="start"></ion-icon>
     Prendre une photo
+  </ion-button>
+  
+  <ion-button (click)="addPhoto('camera')" color="secondary" expand="block">
+    <ion-icon name="camera" slot="start"></ion-icon>
+    Ouvrir la bibliothèque
   </ion-button>
 
   <div class="flex">

@@ -32,6 +32,7 @@
         <h2 >{{ todolist.owner }}</h2>
       </ion-label>
       <ion-button fill="clear" [routerLink]="['/dousers',  todolist.id]" > <small>settings</small> </ion-button>
+      <ion-button fill="clear" (click)="delete(todolist)" > <small>delete</small> </ion-button>
     </ion-item>
      <ion-item text-wrap> 
        {{todolist.title}}

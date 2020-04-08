@@ -15,15 +15,16 @@ export class CameraPage implements OnInit {
   }
   async addPhoto(source:string) {
 
-   if (source === 'camera') {
-    console.log('camera');
-    const cameraPhoto = await this.openCamera();
-    this.image = 'data:image/jpg;base64,' + cameraPhoto;
-  } else {
-    console.log('library');
-    const libraryImage = await this.openLibrary();
-    this.image = 'data:image/jpg;base64,' + libraryImage;
-  }
+    if (source === 'library') {
+      console.log('camera');
+      const cameraPhoto = await this.openCamera();
+      this.image = 'data:image/jpg;base64,' + cameraPhoto;
+    } else {
+      console.log('library');
+      const libraryImage = await this.openLibrary();
+      this.image = 'data:image/jpg;base64,' + libraryImage;
+    }
+  
 }
 async openLibrary() {
   const options: CameraOptions = {
