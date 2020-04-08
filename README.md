@@ -28,7 +28,6 @@
 
 - Stocker des données d'image sur firebase.
 
-- Supprimer la liste avec la priorité
 
 ### Compilation et déploiement
 - PC: 
@@ -36,6 +35,8 @@
     - git clone ce projet
     - executer la commande : ionic serve
     - Camera : npm install @ionic-native/camera
+               Vous pouvez la tester sur la plateforme en lançant la command suivante pour installer plugin:
+                  ionic cordova plugin add cordova-plugin-camera 
     
 - déploiement sur mobile
     - Téléchager mobile-app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
