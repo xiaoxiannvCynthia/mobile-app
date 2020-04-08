@@ -35,8 +35,10 @@
     - git clone ce projet
     - executer la commande : ionic serve
     - Camera : npm install @ionic-native/camera
-               Vous pouvez la tester sur la plateforme en lançant la command suivante pour installer plugin:
-                  ionic cordova plugin add cordova-plugin-camera 
+               - Vous pouvez la tester sur la plateforme browser en lançant la command suivante pour installer plugin:
+                  - ionic cordova platform add browser
+                  - ionic cordova plugin add cordova-plugin-camera 
+                  - ionic cordova run browser
     
 - déploiement sur mobile
     - Téléchager mobile-app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
