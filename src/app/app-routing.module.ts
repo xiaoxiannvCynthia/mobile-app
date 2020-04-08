@@ -6,6 +6,7 @@ import { GuardService } from './guard.service';
 
 
 
+
 const adminOnly = () => hasCustomClaim('admin');
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
@@ -50,6 +51,10 @@ const routes: Routes = [
     path: 'dousers',
     loadChildren: () => import('./dousers/dousers.module').then( m => m.DousersPageModule),
     canActivate : [GuardService]
+  },
+  {
+    path: 'camera',
+    loadChildren: () => import('./camera/camera.module').then( m => m.CameraPageModule)
   },
   
 ];

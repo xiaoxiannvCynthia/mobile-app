@@ -14,7 +14,7 @@
   
   <form (ngSubmit)="addList()" #addListForm="ngForm">
         <ion-row margin class="row1">
-        <ion-button  expand="block"  fill="clear" > <ion-icon name="images"></ion-icon></ion-button>
+        <ion-button  expand="block"  fill="clear" [routerLink]="['/camera']" routerLinkActive="router-link-active" > <ion-icon name="images"></ion-icon></ion-button>
         <ion-input placeholder="ajouter une liste" required id="title" type="text" name="title" [(ngModel)]="title" #ctrlTitle="ngModel">
         </ion-input>
       <ion-button  expand="block" type="submit" fill="clear" [disabled]="!addListForm.valid"> <ion-icon name="paper-plane"></ion-icon>
