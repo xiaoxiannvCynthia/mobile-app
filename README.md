@@ -33,4 +33,8 @@
     - Téléchager mobile-app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
     - Installer app-debug.apk
 
+### Le hosting
+
+https://cours5-9520b.web.app/login
+
  
