@@ -23,13 +23,14 @@
 
 - Pour la function: donner les priorité, maintenant, les utilisateurs ont des priorités d'écriture et lecture peuvent ajouter reader et writer. Mais pour nous, c'est juste le 'owner' de la liste peut ajouter reader et writer. Nous pensez on doit créer une function. Elle vérifie si l'utilisateur est le "owner". S'il n' est pas owner. Nous cachez le button. Mais on viens de le trouver. C'est trop tard. 
 
-- Stocker des images sur firebase.
+- Prendre une photo, ouvrir la bibliothèque, stocker des données d'image sur firebase.
 
 ### Compilation et déploiement
 - PC: 
     - Installer node.js, ionic
     - git clone ce projet
     - executer la commande : ionic serve
+    - Camera : npm install @ionic-native/camera
     
 - déploiement sur mobile
     - Téléchager mobile-app/platforms/android/app/build/outputs/apk/debug/app-debug.apk
